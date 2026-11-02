@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecureAudit — website security check-ups for small businesses</title>
+  <meta name="description" content="Free website security scan, plus affordable security check-ups for clinics, shops and online brands in India.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="#" class="logo" aria-label="SecureAudit home">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m8.5 12 2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      SecureAudit
+    </a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#process">How it works</a>
+      <a href="#contact" class="nav-cta">Book a check-up</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Is your business website safe to trust with customers' data?</h1>
+      <p class="lede">Get a free check in about 10 seconds. We look at the same things an attacker sees first: your certificate, your security settings, and whether someone can send email pretending to be you.</p>
+
+      <form id="scan-form" class="scan-form" novalidate>
+        <label for="scan-url" class="visually-hidden">Website address</label>
+        <input id="scan-url" name="url" type="text" inputmode="url" autocomplete="url"
+               placeholder="yourbusiness.in" required>
+        <button type="submit" id="scan-btn">Check my website</button>
+      </form>
+      <p class="fine">Read-only checks. We never log in, submit forms or test for weaknesses without your written permission.</p>
+      <p id="scan-error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section id="report" class="report" hidden aria-live="polite">
+      <div class="report-head">
+        <div>
+          <p class="report-kicker">Security check-up report</p>
+          <h2 id="report-host"></h2>
+          <p id="report-meta" class="report-meta"></p>
+        </div>
+        <div class="stamp" id="stamp" aria-label="">
+          <span id="stamp-grade"></span>
+          <small id="stamp-score"></small>
+        </div>
+      </div>
+      <div id="report-body"></div>
+      <div class="report-foot">
+        <p>Need help fixing these? Most issues take us under an hour on common hosts like Hostinger, GoDaddy, Shopify and WordPress.</p>
+        <a href="#contact" class="btn" id="report-cta">Get these fixed</a>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <h2>What we do</h2>
+      <p class="section-lede">Flat prices, written report, and fixes explained in plain language.</p>
+      <div class="plans">
+        <article class="plan">
+          <h3>Website check-up</h3>
+          <p class="price">₹2,999 <span>one time</span></p>
+          <p>A full look at your site, hosting and domain, with a written report of every issue ranked by risk.</p>
+          <ul>
+            <li>Everything in the free scan, checked by hand</li>
+            <li>Outdated plugins, themes and software</li>
+            <li>Admin login and password policy review</li>
+            <li>Backup check and recovery plan</li>
+          </ul>
+        </article>
+        <article class="plan plan-featured">
+          <h3>Check-up and fix</h3>
+          <p class="price">₹6,999 <span>one time</span></p>
+          <p>We do the check-up, then fix what we find. You get a before-and-after report.</p>
+          <ul>
+            <li>Security headers and HTTPS set up correctly</li>
+            <li>SPF, DKIM and DMARC so nobody can spoof your email</li>
+            <li>Two-factor login on admin, hosting and domain</li>
+            <li>Staff session on spotting phishing (30 min)</li>
+          </ul>
+        </article>
+        <article class="plan">
+          <h3>Monthly care</h3>
+          <p class="price">₹1,499 <span>per month</span></p>
+          <p>For businesses that take payments or bookings online and can't afford downtime.</p>
+          <ul>
+            <li>Weekly scan with alerts on WhatsApp or email</li>
+            <li>Certificate and domain expiry reminders</li>
+            <li>Plugin and software updates</li>
+            <li>Help within 24 hours if something breaks</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="process" class="process">
+      <h2>How a check-up works</h2>
+      <ol class="steps">
+        <li><h3>Free scan and call</h3><p>We run the scan with you on a 15-minute call and explain what it means for your business.</p></li>
+        <li><h3>Written permission</h3><p>You sign a one-page scope so it's clear what we will and won't touch.</p></li>
+        <li><h3>Review</h3><p>We check your site, hosting, domain and email settings within 3 working days.</p></li>
+        <li><h3>Report and fixes</h3><p>You get a ranked list of issues. On the fix plan, we fix them and re-scan to prove it.</p></li>
+      </ol>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="contact-copy">
+        <h2>Book a free 15-minute call</h2>
+        <p>Tell us a little about your business. We reply within one working day.</p>
+        <p class="who">We're two computer science students who focus on security. We work with clinics, coaching centres, shops and online brands.</p>
+      </div>
+      <form id="contact-form" class="contact-form" novalidate>
+        <label>Your name<input name="name" required minlength="2" maxlength="80" autocomplete="name"></label>
+        <label>Email<input name="email" type="email" required maxlength="120" autocomplete="email"></label>
+        <label>Business name<input name="business" maxlength="120" autocomplete="organization"></label>
+        <label>Website<input name="website" maxlength="200" inputmode="url"></label>
+        <label class="full">What would you like help with?<textarea name="message" rows="4" maxlength="2000"></textarea></label>
+        <label class="hp" aria-hidden="true">Fax<input name="company_fax" tabindex="-1" autocomplete="off"></label>
+        <button type="submit" class="btn full">Book my call</button>
+        <p id="contact-status" class="full" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> SecureAudit. We only test systems we have written permission to test.</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
